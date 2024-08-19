@@ -49,9 +49,9 @@ class GameViewModel : ViewModel() {
         updateUserGuess("")
     }
 
-    private var _count = 0
-    val count: Int
-        get() = _count
+//    private var _count = 0
+//    val count: Int
+//        get() = _count
 
 
     private fun pickRandomWordAndShuffle(): String {
@@ -68,7 +68,7 @@ class GameViewModel : ViewModel() {
         val tempWord = word.toCharArray()
         // Scramble the word
         tempWord.shuffle()
-        while (String(tempWord).equals(word)) {
+        while (String(tempWord) == word) {
             tempWord.shuffle()
         }
         return String(tempWord)
